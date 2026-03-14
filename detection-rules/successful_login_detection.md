@@ -1,4 +1,3 @@
-```
 ## Overview
 
 A successful authentication event occurring after multiple failed login attempts may indicate that a brute-force attack has succeeded.
@@ -37,4 +36,4 @@ SOC analysts should verify:
 ## Security Significance
 
 A successful login after repeated failures strongly indicates that a brute-force attack has succeeded.
-```
+
