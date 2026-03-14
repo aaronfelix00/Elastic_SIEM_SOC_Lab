@@ -1,4 +1,3 @@
-```
 ## Overview
 
 Privilege escalation occurs when a user obtains higher-level access on a system.
@@ -41,4 +40,3 @@ The SOC analyst should determine:
 
 Privilege escalation after a brute-force login is a strong sign of compromise.
 
-```
