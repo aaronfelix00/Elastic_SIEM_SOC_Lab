@@ -1,4 +1,3 @@
-```
 ## Overview
 
 Attackers often create new user accounts to maintain persistence on compromised systems.
@@ -42,4 +41,4 @@ The SOC analyst should determine:
 - which user created the account
 
 Unauthorized account creation is a strong indicator of persistence.
-```
+
