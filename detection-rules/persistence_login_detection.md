@@ -1,11 +1,10 @@
-```
 ## Overview
 
 After establishing persistence, attackers may reconnect to the system using a newly created account.
 
 This allows them to regain access even if the original compromised account is disabled.
 
-## Example Command
+## Command
 ```
 ssh backdoor@10.0.0.99
 ```
@@ -31,4 +30,4 @@ The SOC analyst should verify:
 - what actions were performed during the session
 
 Persistent login activity from unauthorized accounts is a strong indicator of compromise.
-```
+
