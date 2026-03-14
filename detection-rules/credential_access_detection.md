@@ -15,7 +15,7 @@ Only privileged users can access this file.
 
 ## Suspicious Command
 
-![Suspicious Command](../screenshots/13_sensitive_file_access_detection_shadow.png)
+![Sus Command](../screenshots/13_sensitive_file_access_detection_shadow.png)
 
 ## Security Impact
 
