@@ -1,4 +1,3 @@
-```
 ## Overview
 
 Credential dumping is a common attacker technique used to extract password hashes from a system.
