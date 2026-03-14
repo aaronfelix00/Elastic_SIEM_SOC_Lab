@@ -1,4 +1,3 @@
-```
 ## Overview
 
 SSH brute-force attacks generate a large number of authentication failures within a short time period.
@@ -34,4 +33,4 @@ When this pattern is detected, the SOC analyst should:
 - identify the source IP address
 - determine the targeted usernames
 - check whether a successful login followed the failures
-```
+
