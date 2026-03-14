@@ -54,10 +54,10 @@ Component                       Role
 🐧 Ubuntu Server            Target host
 📊 Elastic Stack               SIEM platform
 
-screenshots/01_Kali.png
-screenshots/01_Ubuntu.png
-screenshots/02_Elasticsearch_Kibana.png
-screenshots/02_Filebeat.png
+![Kali Linux](screenshots/01_Kali.png)
+![Ubuntu](screenshots/01_Ubuntu.png)
+![Elasticsearch_Kibana](screenshots/02_Elasticsearch_Kibana.png)
+![Filebeat](screenshots/02_Filebeat.png)
 
 --------------------------------------------------------------------
 
