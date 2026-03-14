@@ -14,6 +14,7 @@ Access to this file is highly sensitive and should be monitored.
 Only privileged users can access this file.
 
 ## Suspicious Command
+
 ![Suspicious Command](../screenshots/13_sensitive_file_access_detection_shadow.png)
 
 ## Security Impact
