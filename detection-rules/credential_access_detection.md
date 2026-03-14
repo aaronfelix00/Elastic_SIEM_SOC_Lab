@@ -15,7 +15,7 @@ Only privileged users can access this file.
 
 ## Suspicious Command
 
-![Sus Command](../screenshots/13_sensitive_file_access_detection_shadow.png)
+![Suspicious Command](../screenshots/13_sensitive_file_access_detection_shadow.png)
 
 ## Security Impact
 
@@ -38,4 +38,4 @@ Access to /etc/shadow
 ## SOC Response
 
 If this activity is detected, the SOC team should immediately investigate the user account and determine whether the system has been compromised.
-```
+
