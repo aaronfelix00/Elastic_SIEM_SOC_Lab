@@ -451,7 +451,7 @@ Recommended improvements:
 	• Disable root login
 
 ![Fail2ban](screenshots/23_fail2ban_status_verification.png)
-![Firewall](screenshots/24_firewall_security_rules_enabled.png]
+![Firewall](screenshots/24_firewall_security_rules_enabled.png)
 ![Re-entry Failure](screenshots/25_confirmation_of_reentry_failed.png)
 
 ------------------------------------------------------------------
