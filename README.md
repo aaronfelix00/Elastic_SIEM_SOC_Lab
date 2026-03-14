@@ -164,7 +164,7 @@ Workflow
       ▼
 SSH Service Detected
 
-screenshots/05_Attacker_Recon_nmap_scan.png
+![Recon](screenshots/05_Attacker_Recon_nmap_scan.png)
 
 🔑 2. SSH Brute Force
 
@@ -185,8 +185,8 @@ Multiple Failed Logins
       ▼
 🚨 SIEM Detection
 
-screenshots/06_ssh_bruteforce_attack_execution_with_hydra.png
-screenshots/07_multiple_failed_ssh_authentication_attempts.png
+![Hydra Execution](screenshots/06_ssh_bruteforce_attack_execution_with_hydra.png)
+![Failed SSH Attempts](screenshots/07_multiple_failed_ssh_authentication_attempts.png)
 
 🔓 3. Successful Login
 
@@ -204,7 +204,7 @@ Successful Authentication
       ↓
 Unauthorized Access
 
-screenshots/08_successful_ssh_authentication_event.png
+![Succesful Login](screenshots/08_successful_ssh_authentication_event.png)
 
 ⚡ 4. Privilege Escalation
 
@@ -227,7 +227,7 @@ sudo session opened
 
 This indicates the attacker now has full administrative control.
 
-screenshots/10_privilege_escalation_sudo_session.png
+![Privilege Escalation](screenshots/10_privilege_escalation_sudo_session.png)
 
 
 🗝️ 5. Credential Dumping
@@ -249,7 +249,7 @@ Password Hash Extraction
 MITRE ATTACK
 T1003 Credential Dumping
 
-screenshots/12_linux_shadow_file_credential_dump.png
+![Credential Dumping](screenshots/12_linux_shadow_file_credential_dump.png)
 
 
 🧬 6. Persistence Creation
@@ -272,7 +272,7 @@ Backdoor Account
       ▼
 Persistent Access
 
-screenshots/14_backdoor_account_creation_command.png
+![Backdoor Creation](screenshots/14_backdoor_account_creation_command.png)
 
 
 🔁 7. Backdoor Re-entry
@@ -291,7 +291,7 @@ SSH Authentication
       ▼
 Persistent Access
 
-screenshots/16_backdoor_ssh_login_persistence_access.png
+![Backdoor Persistence](screenshots/16_backdoor_ssh_login_persistence_access.png)
 
 -------------------------------------------------------------------
 
@@ -299,7 +299,7 @@ screenshots/16_backdoor_ssh_login_persistence_access.png
 
 The SOC configured detections for multiple attack behaviours.
 
-screenshots/authentication_analysis.png
+![Auth Analysis](screenshots/authentication_analysis.png)
 
 -------------------------------------------------------------------
 
@@ -373,7 +373,7 @@ Sensitive File
       ▼
 Credential Dump Attempt
 
-screenshots/20_SIEM_attack_timeline_analysis.png
+![Timeline Analysis](screenshots/20_SIEM_attack_timeline_analysis.png)
 
 ------------------------------------------------------------------
 
@@ -411,7 +411,7 @@ Time              Event                                     Interpretation
 21:07             login attempts with backdoor              Persistence tested    
 21:08             Systemd session confirmed                 Backdoor access confirmed    
 
-screenshots/20_SIEM_attack_timeline_analysis.png
+![Timeline Analysis](screenshots/20_SIEM_attack_timeline_analysis.png)
                                                                                     
 -----------------------------------------------------------------
 
@@ -429,7 +429,7 @@ rm -rf /home/backdoor
 Verify removal:
 cat /etc/passwd | grep backdoor
 
-screenshots/22_backdoor_termination_removal_and_validation.png
+![Backdoor Termination](screenshots/22_backdoor_termination_removal_and_validation.png)
 
 -----------------------------------------------------------------
 
@@ -450,9 +450,9 @@ Recommended improvements:
 	• Enable firewall
 	• Disable root login
 
-screenshots/23_fail2ban_status_verification.png
-screenshots/24_firewall_security_rules_enabled.png
-screenshots/25_confirmation_of_reentry_failed.png
+![Fail2ban](screenshots/23_fail2ban_status_verification.png)
+![Firewall](screenshots/24_firewall_security_rules_enabled.png]
+![Re-entry Failure](screenshots/25_confirmation_of_reentry_failed.png)
 
 ------------------------------------------------------------------
 
