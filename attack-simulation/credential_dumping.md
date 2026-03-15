@@ -1,4 +1,3 @@
-```
 # Credential Dumping
 
 Once root access is obtained, the attacker attempts to extract password hashes from the Linux system.
@@ -32,4 +31,4 @@ Relevant indicators include:
 
 - access to /etc/shadow
 - root-level commands executed after login
-```
+

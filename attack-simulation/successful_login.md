@@ -1,4 +1,3 @@
-```
 # Successful SSH Login
 
 After multiple authentication attempts during the brute-force attack, the attacker eventually discovers valid credentials for a user account on the Ubuntu server.
@@ -17,4 +16,4 @@ If authentication succeeds, the attacker receives an interactive shell on the Ub
 
 ![Successful SSH Attempt](../screenshots/08_successful_ssh_authentication_event.png)
 ![Successful SSH Attempt Event logged in Kibana](../screenshots/09_successful_login_event_in_kibana_discover.png)
-```
+

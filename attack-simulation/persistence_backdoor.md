@@ -1,4 +1,3 @@
-```
 # Persistence via Backdoor Account
 
 To maintain long-term access to the compromised system, the attacker creates a new user account.
@@ -35,4 +34,4 @@ This confirms that the persistence account was successfully created.
 Creating unauthorized accounts is a common attacker persistence technique.
 
 The attacker can later use this account to regain access to the system.
-```
+

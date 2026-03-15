@@ -1,4 +1,3 @@
-```
 # Attack Simulation
 
 This section documents the offensive simulation performed during the SOC lab.
@@ -13,4 +12,4 @@ Attack stages:
 4. Credential dumping
 5. Persistence creation
 6. Attacker re-entry
-```
+

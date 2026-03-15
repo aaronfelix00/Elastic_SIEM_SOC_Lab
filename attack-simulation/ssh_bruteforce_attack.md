@@ -1,4 +1,3 @@
-```
 # SSH Brute Force Attack
 
 The attacker used Hydra from Kali Linux to perform a brute-force attack against the SSH service running on the Ubuntu target.
@@ -37,4 +36,4 @@ sudo tail -f /var/log/auth.log
 ![Failed SSH Attempts Shown in Kibana](../screenshots/07b_multiple_failed_login_events_in_kibana_discover.png)
 
 These logs are collected by Filebeat and sent to Elasticsearch for SOC monitoring.
-```
+

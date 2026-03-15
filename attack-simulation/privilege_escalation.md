@@ -1,4 +1,3 @@
-```
 # Privilege Escalation
 
 After gaining access to the Ubuntu system through SSH, the attacker escalates privileges to obtain root access.
@@ -33,4 +32,4 @@ sudo: pam_unix(sudo-i:session): session opened for user root by ragnar(uid=1000)
 ```
 
 This event is visible in Elastic SIEM and indicates privilege escalation activity.
-```
+

@@ -1,4 +1,3 @@
-```
 # Attacker Re-Entry
 
 After establishing persistence, the attacker reconnects to the compromised system using the newly created backdoor account.
@@ -31,4 +30,4 @@ SOC analysts should investigate:
 - authentication activity associated with the backdoor user
 
 These events provide strong indicators of persistence activity during an intrusion.
-```
+
