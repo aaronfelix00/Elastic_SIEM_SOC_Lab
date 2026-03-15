@@ -44,6 +44,126 @@ The main goals of this SOC lab are:
 
 ---------------------------------------------------------------------
 
+🧱 LAB ENVIRONMENT PREPARATION & CONFIGURATION
+
+This SOC lab was built as a self-contained environment to simulate and investigate a Linux SSH intrusion using Elastic SIEM.
+
+## Environment Components
+
+The lab consisted of the following systems:
+- Kali Linux VM — attacker machine used for reconnaissance and SSH brute-force simulation
+- Ubuntu Server VM — target system hosting SSH and generating authentication logs
+- Elastic Stack — SIEM platform used for log ingestion, detection, visualization, and investigation
+- Filebeat — lightweight log shipper installed on the Ubuntu server to forward security logs to Elasticsearch
+
+## Virtualization Setup
+
+The systems were deployed as virtual machines in a controlled lab environment.
+
+### Kali Linux
+
+Configured as the attacker host with tools required for offensive simulation, including:
+- Nmap
+- Hydra
+- SSH client
+
+### Ubuntu Server
+
+Configured as the monitored target host with:
+- OpenSSH service enabled
+- authentication logging enabled
+- sudo functionality available for privilege escalation testing
+- Filebeat installed for log forwarding
+
+## Network Configuration
+
+The lab required network connectivity between the attacker and the target system so that the Kali machine could reach the Ubuntu server over SSH.
+
+The Ubuntu server exposed:
+```TCP 22 - SSH``` for access
+
+This allowed the attacker to perform:
+- service reconnaissance
+- brute-force login attempts
+- successful SSH authentication
+- post-compromise actions
+
+## Log Collection Configuration
+
+The primary log source monitored in the lab was:
+```
+/var/log/auth.log
+```
+
+This file was selected because it records:
+- failed SSH authentication attempts
+- successful SSH logins
+- ```sudo``` privilege escalation events
+- account and session activity
+
+## Filebeat Configuration
+
+Filebeat was installed on the Ubuntu target and configured to collect Linux authentication events.
+
+The system module was enabled so that the SIEM could ingest:
+- authentication logs
+- system login activity
+- privilege escalation events
+
+Telemetry pipeline:
+```
+Ubuntu Server
+     ↓
+auth.log
+     ↓
+Filebeat
+     ↓
+Elasticsearch
+     ↓
+Kibana / Elastic Security
+     ↓
+SOC Analyst Investigation
+```
+
+## Elasticsearch and Kibana Configuration
+
+Elasticsearch was used as the central log storage and indexing engine.
+
+Kibana was used to:
+- create data views
+- search ingested logs
+- build dashboards
+- investigate suspicious activity
+- review alerts generated from detection logic
+
+## SIEM Validation
+
+Before running the attack simulation, the following validation steps were performed:
+- Filebeat service running
+- Logs successfully forwarded to  Elasticsearch
+- ```filebeat-*``` index visible in Kibana
+- Authentication logs searchable in Discover
+- Elastic Security interface accessible for investigation
+
+## Lab Validation
+
+The environment was considered ready once:
+- Kali could reach the Ubuntu server over SSH
+- Ubuntu generated authentication logs
+- Filebeat successfully forwarded logs
+- Kibana displayed the ingested events
+
+This preparation ensured that the full attack chain — from reconnaissance to incident response — could be observed and analyzed within the SOC workflow.
+
+## Environment Evidence
+![Kali Linux](screenshots/01_Kali.png)
+![Ubuntu](screenshots/01_Ubuntu.png)
+![Elasticsearch_Kibana](screenshots/02_Elasticsearch_Kibana.png)
+![Filebeat](screenshots/02_Filebeat.png)
+![Kibana Homepage](../screenshots/04_Kibana_Home_Page)
+![Kibana Data Views](../screenshots/04_Kibana_Data_Views.png)
+---------------------------------------------------------------------
+
 🏗 LAB ARCHITECTURE
 
 The environment consists of three primary systems.
@@ -53,11 +173,6 @@ The environment consists of three primary systems.
 | 🐉 Kali Linux | Attacker machine |
 | 🐧 Ubuntu Server | Target host |
 | 📊 Elastic Stack | SIEM platform |
-
-![Kali Linux](screenshots/01_Kali.png)
-![Ubuntu](screenshots/01_Ubuntu.png)
-![Elasticsearch_Kibana](screenshots/02_Elasticsearch_Kibana.png)
-![Filebeat](screenshots/02_Filebeat.png)
 
 --------------------------------------------------------------------
 
