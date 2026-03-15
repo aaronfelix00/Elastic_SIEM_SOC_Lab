@@ -11,7 +11,7 @@ sudo -i
 
 ## Explanation
 
-The 'sudo -i' command opens a root login shell if the user has sudo privileges and provides the correct password.
+The ```sudo -i``` command opens a root login shell if the user has sudo privileges and provides the correct password.
 
 The shell prompt changes from a user context to root.
 
