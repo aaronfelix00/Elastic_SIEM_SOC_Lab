@@ -1,5 +1,5 @@
-🛡 E️LASTIC SIEM SOC LAB
-🔍 Detecting and Responding to a Linux SSH Intrusion
+# 🛡 E️LASTIC SIEM SOC LAB
+## 🔍 Detecting and Responding to a Linux SSH Intrusion
 -----------------------------------------------------------------------
 
 📘 OVERVIEW
