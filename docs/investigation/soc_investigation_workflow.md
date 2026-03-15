@@ -1,4 +1,3 @@
-```
 # SOC Investigation Workflow
 
 The analyst workflow followed this sequence:
@@ -13,4 +12,3 @@ The analyst workflow followed this sequence:
 8. Contain the attacker
 9. Remove persistence
 10. Validate remediation
-```

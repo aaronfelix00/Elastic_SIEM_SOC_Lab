@@ -1,4 +1,3 @@
-```
 # Incident Response Procedure
 
 ## Containment
@@ -14,4 +13,3 @@
 - validate account removal
 - review sensitive access
 - recommend SSH hardening and brute-force protection
-```

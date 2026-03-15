@@ -1,4 +1,3 @@
-```
 # Attack Chain
 
 This document summarizes the full simulated intrusion workflow.
@@ -16,7 +15,7 @@ This document summarizes the full simulated intrusion workflow.
 
 ## Attack Flow
 
-```text
+```
 Recon → Brute Force → Initial Access → Privilege Escalation → Credential Access → Persistence → Re-entry → Response
 ```
-```
+
