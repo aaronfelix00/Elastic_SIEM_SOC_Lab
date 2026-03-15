@@ -11,7 +11,7 @@ This helps frame the intrusion using a standardized threat model and demonstrate
 | SSH brute force | Credential Access | T1110 - Brute Force |
 | Successful SSH login | Initial Access | T1078 - Valid Accounts |
 | Privilege escalation using sudo | Privilege Escalation | Elevated execution through abuse of privileged access |
-| Credential dumping from /etc/shadow | Credential Access | T1003 - OS Credential Dumping |
+| Credential dumping from ```/etc/shadow``` | Credential Access | T1003 - OS Credential Dumping |
 | Backdoor user creation | Persistence | T1136 - Create Account |
 | Persistence via account use | Persistence | T1098 - Account Manipulation |
 | SSH login using backdoor account | Lateral / Remote Access Context | T1021 - Remote Services |
