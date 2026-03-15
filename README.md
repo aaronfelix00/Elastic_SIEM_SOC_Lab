@@ -49,6 +49,7 @@ The main goals of this SOC lab are:
 The environment consists of three primary systems.
 
 Component                       Role
+
 🐉 Kali Linux                    Attacker machine
 🐧 Ubuntu Server            Target host
 📊 Elastic Stack               SIEM platform
@@ -85,41 +86,24 @@ The attack telemetry flows through the Elastic monitoring pipeline.
 
 ------------------------------------------------------------------
 
-⚔  ATTACK SCENARIO
+## ⚔️ TTACK SCENARIO
 
 The attacker targets the SSH service exposed on the Ubuntu server.
 
-Attack flow
+```mermaid
+flowchart TD
 
-🔎 Reconnaissance
-        │ System logs (/var/log/auth.log)
-        ▼
-🔑 SSH Brute Force
-        │                                  
-        ▼ 
-🔓 Successful Login
-        │                                  
-        ▼
-⚡ Privilege Escalation
-        │
-        ▼
-🗝 Credential Dumping
-        │
-        ▼
-🧬 Persistence Creation
-        │
-        ▼
-🔁 Backdoor Login (Re-entry)
-        │
-        ▼
-🚨 SOC Detection
-        │
-        ▼
-🕵 Incident Investigation
-        │
-        ▼
-🧹 Incident Response (Remediation)
-
+A[🔎 Reconnaissance] --> B[📄 System Logs /var/log/auth.log]
+B --> C[🔑 SSH Brute Force]
+C --> D[🔓 Successful Login]
+D --> E[⚡ Privilege Escalation]
+E --> F[🗝️ Credential Dumping]
+F --> G[🧬 Persistence Creation]
+G --> H[🔁 Backdoor Login (Re-entry)]
+H --> I[🚨 SOC Detection]
+I --> J[🕵️ Incident Investigation]
+J --> K[🛠️ Incident Response (Remediation)]
+```
 ------------------------------------------------------------------
 
 🧰 TOOLS DEPLOYED
