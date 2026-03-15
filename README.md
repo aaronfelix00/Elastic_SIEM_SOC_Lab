@@ -118,29 +118,37 @@ J --> K
 
 ```
 
+<div align="center" style="max-width:600px">
+
 ```mermaid
 flowchart TD
 
-subgraph ATTACK_PHASE
 A["🔎 Reconnaissance"]
-B["🔑 SSH Brute Force"]
-C["🔓 Successful Login"]
-end
+B["📄 System Logs /var/log/auth.log"]
+C["🔑 SSH Brute Force"]
+D["🔓 Successful Login"]
+E["⚡ Privilege Escalation"]
+F["🗝️ Credential Dumping"]
+G["🧬 Persistence Creation"]
+H["🔁 Backdoor Login (Re-entry)"]
+I["🚨 SOC Detection"]
+J["🕵️ Incident Investigation"]
+K["🛠️ Incident Response (Remediation)"]
 
-subgraph POST_EXPLOITATION
-D["⚡ Privilege Escalation"]
-E["🗝️ Credential Dumping"]
-F["🧬 Persistence"]
-end
+A --> B
+B --> C
+C --> D
+D --> E
+E --> F
+F --> G
+G --> H
+H --> I
+I --> J
+J --> K
 
-subgraph SOC_RESPONSE
-G["🚨 SOC Detection"]
-H["🕵️ Investigation"]
-I["🛠️ Remediation"]
-end
 
-A --> B --> C --> D --> E --> F --> G --> H --> I
 
+</div>
 ```
 
 ------------------------------------------------------------------
