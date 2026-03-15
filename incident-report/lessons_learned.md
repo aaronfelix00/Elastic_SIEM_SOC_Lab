@@ -1,4 +1,3 @@
-```
 # Lessons Learned
 
 This SOC lab demonstrates how brute-force attacks can lead to full system compromise when proper security controls are not in place.
@@ -11,4 +10,4 @@ Key lessons include:
 - unauthorized account creation is a strong indicator of persistence
 
 Security monitoring and proper system hardening are essential to prevent similar attacks in production environments.
-```
+

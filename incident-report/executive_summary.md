@@ -1,4 +1,3 @@
-```
 # Executive Summary
 
 This report documents a simulated intrusion detected and investigated using Elastic SIEM.
@@ -10,4 +9,4 @@ The attacker successfully authenticated, escalated privileges, accessed credenti
 The SOC team detected the attack through authentication monitoring and performed an investigation to reconstruct the timeline and determine the impact.
 
 Remediation actions were implemented to remove attacker access and improve system security.
-```
+

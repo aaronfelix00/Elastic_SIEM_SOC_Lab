@@ -1,6 +1,3 @@
-```
-# Incident Details
-
 ## Attack Vector
 
 The attacker targeted the SSH service exposed on the Ubuntu server.
@@ -17,7 +14,7 @@ After login, the attacker escalated privileges using sudo.
 
 Once root access was obtained, the attacker performed the following actions:
 
-- accessed the /etc/shadow file
+- accessed the ```/etc/shadow``` file
 - created a persistent backdoor account
 - reconnected using the persistence account
 
@@ -26,4 +23,4 @@ Once root access was obtained, the attacker performed the following actions:
 Elastic SIEM detected suspicious authentication behavior including multiple failed login attempts followed by a successful authentication event.
 
 This triggered a SOC investigation.
-```
+

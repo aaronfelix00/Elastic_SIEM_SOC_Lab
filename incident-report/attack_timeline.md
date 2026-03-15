@@ -1,14 +1,11 @@
-```
-# Attack Timeline
-
 ## Overview
 
 This timeline reconstructs the intrusion events observed on the Ubuntu server during the SOC lab simulation.
 
 The sequence of events was derived from authentication logs collected from:
-
+```
 /var/log/auth.log
-
+```
 These logs were ingested into Elastic SIEM through Filebeat and analyzed in Kibana.
 
 ---
@@ -66,4 +63,4 @@ The correlation of these events enabled the SOC analyst to identify and investig
 This timeline demonstrates a full attack progression from initial targeting to persistence and re-entry.
 
 It also shows how Elastic SIEM can be used to correlate events and reconstruct the incident for investigation and response.
-```
+

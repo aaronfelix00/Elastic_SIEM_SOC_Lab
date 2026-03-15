@@ -1,4 +1,3 @@
-```
 ## Overview
 
 This document lists the key indicators of compromise (IOCs) identified during the simulated SSH intrusion.
@@ -12,8 +11,9 @@ These indicators help the SOC analyst identify malicious activity, correlate eve
 The attacker originated from the Kali Linux machine.
 
 ## Evidence
+```
 10.0.0.99
-
+```
 This IP was associated with:
 	• repeated failed SSH logins
 	• successful authentication
@@ -112,4 +112,4 @@ The strongest indicators of compromise in this lab were:
 	• sudo privilege escalation
 	• access to /etc/shadow
 	• creation and use of the backdoor account
-```
+
