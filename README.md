@@ -117,6 +117,32 @@ I --> J
 J --> K
 
 ```
+
+```mermaid
+flowchart TD
+
+subgraph ATTACK_PHASE
+A["🔎 Reconnaissance"]
+B["🔑 SSH Brute Force"]
+C["🔓 Successful Login"]
+end
+
+subgraph POST_EXPLOITATION
+D["⚡ Privilege Escalation"]
+E["🗝️ Credential Dumping"]
+F["🧬 Persistence"]
+end
+
+subgraph SOC_RESPONSE
+G["🚨 SOC Detection"]
+H["🕵️ Investigation"]
+I["🛠️ Remediation"]
+end
+
+A --> B --> C --> D --> E --> F --> G --> H --> I
+
+```
+
 ------------------------------------------------------------------
 
 🧰 TOOLS DEPLOYED
