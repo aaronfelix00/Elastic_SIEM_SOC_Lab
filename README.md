@@ -35,13 +35,12 @@ Simulated Attack Stages:
 🎯 OBJECTIVES
 
 The main goals of this SOC lab are:
-
-✔ Build a working SIEM monitoring environment
-✔ Collect and analyze Linux authentication logs
-✔ Simulate a realistic SSH intrusion scenario
-✔ Detect malicious behaviour using Elastic Security
-✔ Investigate alerts using Kibana dashboards
-✔ Perform incident response and system remediation
+-  Build a working SIEM monitoring environment
+-  Collect and analyze Linux authentication logs
+-  Simulate a realistic SSH intrusion scenario
+-  Detect malicious behaviour using Elastic Security
+-  Investigate alerts using Kibana dashboards
+-  Perform incident response and system remediation
 
 ---------------------------------------------------------------------
 
@@ -67,7 +66,7 @@ The attack telemetry flows through the Elastic monitoring pipeline.
 
             🐉 Kali Attacker
                    │
-                    | SSH Brute Force / Intrusion
+                   | SSH Brute Force / Intrusion
                    ▼
             🐧 Ubuntu Server
                    │
@@ -93,23 +92,32 @@ The attacker targets the SSH service exposed on the Ubuntu server.
 Attack flow
 
 🔎 Reconnaissance
-      ↓
+        │ System logs (/var/log/auth.log)
+        ▼
 🔑 SSH Brute Force
-      ↓
+        │                                  
+        ▼ 
 🔓 Successful Login
-      ↓
+        │                                  
+        ▼
 ⚡ Privilege Escalation
-      ↓
+        │
+        ▼
 🗝 Credential Dumping
-      ↓
+        │
+        ▼
 🧬 Persistence Creation
-      ↓
+        │
+        ▼
 🔁 Backdoor Login (Re-entry)
-      ↓
+        │
+        ▼
 🚨 SOC Detection
-      ↓
+        │
+        ▼
 🕵 Incident Investigation
-      ↓
+        │
+        ▼
 🧹 Incident Response (Remediation)
 
 ------------------------------------------------------------------
@@ -117,6 +125,7 @@ Attack flow
 🧰 TOOLS DEPLOYED
 
 Tool                                Purpose
+
 🐉 Kali Linux                 Attack platform
 💣 Hydra                       SSH brute force
 🔐 SSH                         Remote login
@@ -151,9 +160,9 @@ Credential access attempts
 🔎 1. Reconnaissance
 
 The attacker begins by scanning the target system.
-
+```
 nmap -sV "Target IP"
-
+```
 Workflow
 
 🐉 Kali Attacker
@@ -169,9 +178,9 @@ SSH Service Detected
 🔑 2. SSH Brute Force
 
 The attacker attempts to guess passwords.
-
+```
 hydra -L users.txt -P passwords.txt ssh://"Target IP"
-
+```
 Workflow
 
 💣 Hydra Attack
@@ -191,17 +200,20 @@ Multiple Failed Logins
 🔓 3. Successful Login
 
 Eventually a password is discovered.
-
+```
 ssh "username"@"Target IP"
-
+```
 Workflow
 
 Failed Logins
-      ↓
+      │
+      ▼
 Correct Password Found
-      ↓
+      │
+      ▼
 Successful Authentication
-      ↓
+      │
+      ▼
 Unauthorized Access
 
 ![Succesful Login](screenshots/08_successful_ssh_authentication_event.png)
@@ -209,9 +221,9 @@ Unauthorized Access
 ⚡ 4. Privilege Escalation
 
 The attacker escalates privileges.
-
+```
 sudo -i
-
+```
 Workflow
 
   User Shell
@@ -223,8 +235,9 @@ Workflow
 👑 Root Access
 
 Indicator in logs:
+```
 sudo session opened
-
+```
 This indicates the attacker now has full administrative control.
 
 ![Privilege Escalation](screenshots/10_privilege_escalation_sudo_session.png)
@@ -247,18 +260,19 @@ Sensitive File Access
 Password Hash Extraction
 
 MITRE ATTACK
+```
 T1003 Credential Dumping
-
+```
 ![Credential Dumping](screenshots/12_linux_shadow_file_credential_dump.png)
 
 
 🧬 6. Persistence Creation
 
 The attacker creates a backdoor user.
-
+```
 useradd backdoor
 passwd backdoor
-
+```
 Workflow
 
 Root Access
@@ -278,9 +292,9 @@ Persistent Access
 🔁 7. Backdoor Re-entry
 
 The attacker reconnects later.
-
+```
 ssh backdoor@"Target IP"
-
+```
 Workflow
 
 Backdoor Credentials
@@ -306,8 +320,9 @@ The SOC configured detections for multiple attack behaviours.
 🚨 A. SSH Brute Force Detection
 
 Indicator:
+```
 event.outcome: "failure"
-
+```
 Vector:
 
 Multiple Failures
@@ -322,8 +337,9 @@ Threshold Triggered
 🔓 B. Successful Login Detection
 
 Indicator:
+```
 event.outcome: "success"
-
+```
 Vector:
 
 Successful Login
@@ -335,8 +351,9 @@ User Activity Investigation
 ⚡ C. Privilege Escalation Detection
 
 Indicator:
+```
 sudo usage
-
+```
 Vector:
 
 User Command
@@ -351,8 +368,9 @@ Root Privileges
 🧬 D. Suspicious User Creation
 
 Indicator:
+```
 useradd
-
+```
 Vector:
 
 New User Created
@@ -364,8 +382,9 @@ Potential Persistence
 🗝  E. Credential Access Detection
 
 Indicator:
+```
 /etc/shadow
-
+```
 Vector:
 
 Sensitive File
@@ -418,17 +437,21 @@ Time              Event                                     Interpretation
 🚑 INCIDENT RESPONSE
 
 Terminate attacker session:
+```
 pkill -u backdoor
-
+```
 Remove persistence:
+```
 userdel -r backdoor
-
+```
 Delete home directory:
+```
 rm -rf /home/backdoor
-
+```
 Verify removal:
+```
 cat /etc/passwd | grep backdoor
-
+```
 ![Backdoor Termination](screenshots/22_backdoor_termination_removal_and_validation.png)
 
 -----------------------------------------------------------------
@@ -444,11 +467,11 @@ Security Controls
       └── 📊 Continuous Monitoring
 
 Recommended improvements:
-	• Disable password SSH authentication
-	• Enable SSH key authentication
-	• Install Fail2ban
-	• Enable firewall
-	• Disable root login
+- Disable password SSH authentication
+- Enable SSH key authentication
+- Install Fail2ban
+- Enable firewall
+- Disable root login
 
 ![Fail2ban](screenshots/23_fail2ban_status_verification.png)
 ![Firewall](screenshots/24_firewall_security_rules_enabled.png)
@@ -473,21 +496,21 @@ Persistence                 Account Manipulation
 🧠 Skills Demonstrated
 
 This project demonstrates practical SOC analyst skills including:
-	•	SIEM engineering
-	•	Linux log analysis
-	•	threat detection
-	•	incident investigation
-	•	incident response
-	•	MITRE ATT&CK mapping
+- SIEM engineering
+- Linux log analysis
+- threat detection
+- incident investigation
+- incident response
+- MITRE ATT&CK mapping
 
 Skills gained:
 
-✔ Elastic SIEM configuration
-✔ Linux log analysis
-✔ SSH brute force detection
-✔ Persistence investigation
-✔Incident response procedures
-✔Threat mapping using MITRE ATT&CK
+- Elastic SIEM configuration
+- Linux log analysis
+- SSH brute force detection
+- Persistence investigation
+- Incident response procedures
+- Threat mapping using MITRE ATT&CK
 
 ------------------------------------------------------------------
 
@@ -495,10 +518,10 @@ Skills gained:
 
 Key insights from the lab:
 
-* SSH brute-force attacks are easily visible with centralized logging
-* Credential dumping creates strong detection signals
-* Persistence through user accounts is detectable
-* SIEM dashboards greatly accelerate investigations
+- SSH brute-force attacks are easily visible with centralized logging
+- Credential dumping creates strong detection signals
+- Persistence through user accounts is detectable
+- SIEM dashboards greatly accelerate investigations
 
 -----------------------------------------------------------------
 
@@ -509,7 +532,7 @@ using Elastic SIEM.
 
 It highlights the importance of:
 
-✔ centralized logging
-✔ detection engineering
-✔ investigation workflows
-✔ incident response
+- centralized logging
+- detection engineering
+- investigation workflows
+- incident response
