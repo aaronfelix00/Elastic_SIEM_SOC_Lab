@@ -12,7 +12,7 @@ hydra -L users.txt -P rockyou-extract.txt ssh:// -t -32 -V
 ## Explanation
 
 - `-L users.txt` → list of usernames
-- `-P passwords.txt` → password list
+- `-P rockyou-extract.txt` → passwordword lit in Kali (1000 extract) 
 - `ssh://<Target IP>` → target SSH service
 - `-t 32` → number of parallel attack threads
 - `-V` → verbose output
