@@ -11,7 +11,7 @@ hydra -L users.txt -P rockyou-extract.txt ssh:// -t -32 -V
 
 ## Explanation
 
--`-L users.txt` → list of usernames
+- `-L users.txt` → list of usernames
 - `-P passwords.txt` → password list
 - `ssh://<Target IP>` → target SSH service
 - `-t 32` → number of parallel attack threads
