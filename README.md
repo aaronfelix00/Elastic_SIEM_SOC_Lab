@@ -90,20 +90,32 @@ The attack telemetry flows through the Elastic monitoring pipeline.
 
 The attacker targets the SSH service exposed on the Ubuntu server.
 
-mermaid
+```mermaid
 flowchart TD
 
-A[🔎 Reconnaissance] --> B[📄 System Logs /var/log/auth.log]
-B --> C[🔑 SSH Brute Force]
-C --> D[🔓 Successful Login]
-D --> E[⚡ Privilege Escalation]
-E --> F[🗝️ Credential Dumping]
-F --> G[🧬 Persistence Creation]
-G --> H[🔁 Backdoor Login (Re-entry)]
-H --> I[🚨 SOC Detection]
-I --> J[🕵️ Incident Investigation]
-J --> K[🛠️ Incident Response (Remediation)]
+A[🔎 Reconnaissance]
+B[📄 System Logs (/var/log/auth.log)]
+C[🔑 SSH Brute Force]
+D[🔓 Successful Login]
+E[⚡ Privilege Escalation]
+F[🗝️ Credential Dumping]
+G[🧬 Persistence Creation]
+H[🔁 Backdoor Login (Re-entry)]
+I[🚨 SOC Detection]
+J[🕵️ Incident Investigation]
+K[🛠️ Incident Response (Remediation)]
 
+A --> B
+B --> C
+C --> D
+D --> E
+E --> F
+F --> G
+G --> H
+H --> I
+I --> J
+J --> K
+```
 ------------------------------------------------------------------
 
 🧰 TOOLS DEPLOYED
