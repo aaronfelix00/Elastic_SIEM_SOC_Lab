@@ -86,7 +86,7 @@ The attack telemetry flows through the Elastic monitoring pipeline.
 
 ------------------------------------------------------------------
 
-## ⚔ ️ TTACK SCENARIO
+## ⚔️ ATTACK SCENARIO
 
 The attacker targets the SSH service exposed on the Ubuntu server.
 
@@ -123,8 +123,6 @@ The attacker targets the SSH service exposed on the Ubuntu server.
 
 ------------------------------------------------------------------
 
-🧰 TOOLS DEPLOYED
-
 ## 🧰 TOOLS DEPLOYED
 
 | Tool | Purpose |
@@ -159,7 +157,6 @@ Credential access attempts
 
 🚨 ATTACK EXECUTION
 
------------------------------------------------------------------
 🔎 1. Reconnaissance
 
 The attacker begins by scanning the target system.
@@ -323,7 +320,6 @@ The SOC configured detections for multiple attack behaviours.
 
 ![Auth Analysis](screenshots/authentication_analysis.png)
 
--------------------------------------------------------------------
 
 🚨 A. SSH Brute Force Detection
 
