@@ -1,6 +1,3 @@
-```
-# Attack Timeline Reconstruction
-
 ## Overview
 
 After confirming that a successful login occurred, the SOC analyst reconstructs the sequence of events that took place on the compromised system.
@@ -33,4 +30,4 @@ Timeline reconstruction allows the SOC team to understand:
 - the scope of the intrusion
 - the attack progression
 - the impact on the system
-```
+

@@ -1,6 +1,3 @@
-```
-# Attacker Activity Analysis
-
 ## Overview
 
 Following successful authentication, the attacker executed several commands that indicate post-compromise activity.
@@ -48,4 +45,4 @@ The attacker later logged in using the backdoor account.
 
 This confirms that persistence was successfully established.
 
-```
+

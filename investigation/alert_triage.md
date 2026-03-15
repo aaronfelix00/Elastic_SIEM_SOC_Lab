@@ -1,6 +1,3 @@
-```
-# Alert Triage
-
 ## Overview
 
 The SOC investigation begins when Elastic SIEM generates alerts indicating suspicious authentication activity on the Ubuntu server.
@@ -44,4 +41,4 @@ The analyst attempts to answer the following:
 ## Outcome
 
 The alert triage confirms that a brute-force attack is occurring against the SSH service on the Ubuntu host.
-```
+

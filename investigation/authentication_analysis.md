@@ -1,6 +1,3 @@
-```
-# Authentication Log Analysis
-
 ## Overview
 
 The SOC analyst investigates authentication logs to determine whether the brute-force attack resulted in a successful login.
@@ -46,4 +43,4 @@ At this stage the SOC analyst must determine:
 - what actions were performed after login
 - whether privilege escalation occurred
 - whether persistence was established
-```
+
