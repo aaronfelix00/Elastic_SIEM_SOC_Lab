@@ -15,9 +15,9 @@ The attacker originated from the Kali Linux machine.
 10.0.0.99
 ```
 This IP was associated with:
-	• repeated failed SSH logins
-	• successful authentication
-	• post-compromise activity
+- repeated failed SSH logins
+- successful authentication
+- post-compromise activity
 
 ## Account Indicators
 
@@ -90,26 +90,26 @@ authorized_keys
 
 ## Behavorial Indicators
 The following attacker behaviors were observed:
-	• brute-force password guessing
-	• successful SSH compromise
-	• privilege escalation
-	• credential dumping
-	• unauthorized user creation
-	• persistent re-entry using the backdoor account
+- brute-force password guessing
+- successful SSH compromise
+- privilege escalation
+- credential dumping
+- unauthorized user creation
+- persistent re-entry using the backdoor account
 
 ## SOC Relevance
 These indicators provide strong evidence of system compromise and should be used for:
-	• incident triage
-	• timeline reconstruction
-	• scoping the intrusion
-	• containment and eradication
+- incident triage
+- timeline reconstruction
+- scoping the intrusion
+- containment and eradication
 
 ## Summary
 
 The strongest indicators of compromise in this lab were:
-	• repeated failed SSH logins from the attacker IP
-	• successful login after brute-force attempts
-	• sudo privilege escalation
-	• access to /etc/shadow
-	• creation and use of the backdoor account
+- repeated failed SSH logins from the attacker IP
+- successful login after brute-force attempts
+- sudo privilege escalation
+- access to ```/etc/shadow```
+- creation and use of the backdoor account
 
