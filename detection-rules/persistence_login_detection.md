@@ -14,12 +14,14 @@ This indicates that the backdoor account successfully authenticated.
 
 ## Detection Pattern
 
-Typical persistence behavior:
+Typical persistence behaviour:
+```
 Account creation
 ↓
 Backdoor account login
 ↓
 Repeated access to compromised system
+```
 
 ## SOC Investigation
 

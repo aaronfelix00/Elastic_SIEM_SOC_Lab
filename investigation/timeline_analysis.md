@@ -91,6 +91,7 @@ SOC analyst actions:
 ![Firewall](../screenshots/24_firewall_security_rules_enabled.png)
 
 ## Final Attack Chain
+```
 Reconnaissance
 ↓
 SSH Brute Force
@@ -104,6 +105,7 @@ Credential Dumping
 SOC Detection
 ↓
 Incident Response
+```
 
 ## Conclusion
 

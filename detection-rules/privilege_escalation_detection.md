@@ -24,12 +24,13 @@ sudo command execution
 ```
 
 Detection Pattern:
+```
 User login
 ↓
 sudo command
 ↓
 Root session opened
-
+```
 ## SOC Investigation
 
 The SOC analyst should determine:

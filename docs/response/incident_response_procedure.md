@@ -12,4 +12,6 @@
 ## Recovery
 - validate account removal
 - review sensitive access
-- recommend SSH hardening and brute-force protection
+- SSH hardening and brute-force protection
+- Fail2ban installation and implementation
+- Firewall activated and enabled

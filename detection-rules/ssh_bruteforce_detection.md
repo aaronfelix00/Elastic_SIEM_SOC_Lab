@@ -20,11 +20,13 @@ This shows the  indicator of compromise, log entry and the detection pattern.
 ![SSH Bruteforce Detection](../screenshots/07_multiple_failed_ssh_authentication_attempts.png)
 
 Typical brute-force pattern:
+```
 Multiple failed login attempts
 ↓
 Repeated attempts from same IP
 ↓
 Possible credential guessing attack
+```
 
 ## SOC Action
 

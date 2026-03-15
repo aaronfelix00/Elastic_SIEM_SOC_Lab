@@ -27,7 +27,7 @@ The analyst searches for authentication failures associated with the Ubuntu serv
 
 ## Evidence
 ![Alert Triaging from Ubuntu auth.log](../screenshots/authentication_failure_logs_in_Ubuntu.png)
-![Alert Triaging from SIEM](../screenshots/18_ssh_bruteforce_detection_alert_in_SIEM.png)
+![Alert Triaging from SIEM](../screenshots/18_ssh_bruteforce_detection_alert_in_kibana.png)
 
 ## Key Questions
 

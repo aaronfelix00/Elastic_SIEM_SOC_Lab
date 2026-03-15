@@ -8,7 +8,7 @@ This document summarizes the full simulated intrusion workflow.
 2. SSH brute force using Hydra
 3. Successful SSH login
 4. Privilege escalation using sudo
-5. Credential dumping via /etc/shadow
+5. Credential dumping via ```/etc/shadow```
 6. Persistence via backdoor account creation
 7. Backdoor re-entry
 8. SOC detection and response

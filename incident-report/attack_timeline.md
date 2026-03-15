@@ -27,7 +27,7 @@ These logs were ingested into Elastic SIEM through Filebeat and analyzed in Kiba
 ---
 
 ## Attack Flow Reconstruction
-
+```
 Reconnaissance  
 ↓  
 SSH brute-force attempts  
@@ -43,7 +43,7 @@ Persistence creation
 Backdoor login  
 ↓  
 Active attacker session
-
+```
 ---
 
 ## Security Significance

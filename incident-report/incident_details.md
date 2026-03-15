@@ -8,7 +8,7 @@ Using Hydra, the attacker attempted multiple username and password combinations 
 
 The attacker successfully logged into the system using the compromised account.
 
-After login, the attacker escalated privileges using sudo.
+After login, the attacker escalated privileges using ```sudo```.
 
 ## Post-Exploitation
 
@@ -20,7 +20,7 @@ Once root access was obtained, the attacker performed the following actions:
 
 ## Detection
 
-Elastic SIEM detected suspicious authentication behavior including multiple failed login attempts followed by a successful authentication event.
+Elastic SIEM detected suspicious authentication behaviour including multiple failed login attempts followed by a successful authentication event.
 
 This triggered a SOC investigation.
 

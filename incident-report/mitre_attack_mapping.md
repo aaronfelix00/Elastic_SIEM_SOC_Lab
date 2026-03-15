@@ -2,7 +2,7 @@
 
 This document maps the simulated attack activity in the SOC lab to relevant MITRE ATT&CK tactics and techniques.
 
-This helps frame the intrusion using a standardized threat model and demonstrates how the attack aligns with real-world adversary behavior.
+This helps frame the intrusion using a standardized threat model and demonstrates how the attack aligns with real-world adversary behaviour.
 
 ## Mapping Table
 | Attack Stage | MITRE ATT&CK Tactic | MITRE ATT&CK Technique |
@@ -76,7 +76,7 @@ The backdoor account was used to establish remote access over SSH.
 ```
 ## Security Relevance
 
-Mapping this lab to MITRE ATT&CK shows that the intrusion is not just a generic lab exercise, but a realistic sequence of adversary actions aligned with widely recognized threat behavior.
+Mapping this lab to MITRE ATT&CK shows that the intrusion is not just a generic lab exercise, but a realistic sequence of adversary actions aligned with widely recognized threat behaviour.
 
 This also helps defenders:
 

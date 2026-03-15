@@ -88,8 +88,8 @@ Potential persistence-related artifacts include:
 authorized_keys
 ```
 
-## Behavorial Indicators
-The following attacker behaviors were observed:
+## Behavourial Indicators
+The following attacker behaviours were observed:
 - brute-force password guessing
 - successful SSH compromise
 - privilege escalation

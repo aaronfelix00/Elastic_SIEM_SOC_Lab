@@ -5,7 +5,7 @@ After confirming that a successful login occurred, the SOC analyst reconstructs 
 Timeline reconstruction helps determine how the attacker moved through the environment.
 
 ## Observed Event Sequence
-
+```
 Reconnaissance
 ↓
 SSH brute-force attack
@@ -19,6 +19,7 @@ Credential dumping
 Persistence creation
 ↓
 Backdoor login
+```
 
 ## Evidence
 ![Attack Timeline Extract](../screenshots/20_SIEM_attack_timeline_analysis.png)

@@ -2,7 +2,7 @@
 
 Credential dumping is a common attacker technique used to extract password hashes from a system.
 
-In Linux systems, credential hashes are stored in the /etc/shadow file.
+In Linux systems, credential hashes are stored in the ```/etc/shadow``` file.
 
 Access to this file is highly sensitive and should be monitored.
 
@@ -27,13 +27,13 @@ Accessing /etc/shadow allows attackers to:
 ## Detection Pattern
 
 Suspicious sequence:
-
+```
 Successful login
 ↓
 Privilege escalation
 ↓
-Access to /etc/shadow
-
+Access to ```/etc/shadow```
+```
 ## SOC Response
 
 If this activity is detected, the SOC team should immediately investigate the user account and determine whether the system has been compromised.
