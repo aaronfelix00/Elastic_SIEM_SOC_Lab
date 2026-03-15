@@ -2,7 +2,7 @@
 ## 🔍 Detecting and Responding to a Linux SSH Intrusion
 -----------------------------------------------------------------------
 
-📘 OVERVIEW
+## 📘 OVERVIEW
 
 This project demonstrates a complete Security Operations Center (SOC) workflow using the Elastic Stack (Elasticsearch, Kibana, Filebeat).
 
@@ -32,7 +32,7 @@ Simulated Attack Stages:
 
 ----------------------------------------------------------------------
 
-🎯 OBJECTIVES
+## 🎯 OBJECTIVES
 
 The main goals of this SOC lab are:
 -  Build a working SIEM monitoring environment
@@ -44,11 +44,11 @@ The main goals of this SOC lab are:
 
 ---------------------------------------------------------------------
 
-🧱 LAB ENVIRONMENT PREPARATION & CONFIGURATION
+## 🧱 LAB ENVIRONMENT PREPARATION & CONFIGURATION
 
 This SOC lab was built as a self-contained environment to simulate and investigate a Linux SSH intrusion using Elastic SIEM.
 
-## Environment Components
+### Environment Components
 
 The lab consisted of the following systems:
 - Kali Linux VM — attacker machine used for reconnaissance and SSH brute-force simulation
@@ -56,18 +56,18 @@ The lab consisted of the following systems:
 - Elastic Stack — SIEM platform used for log ingestion, detection, visualization, and investigation
 - Filebeat — lightweight log shipper installed on the Ubuntu server to forward security logs to Elasticsearch
 
-## Virtualization Setup
+### Virtualization Setup
 
 The systems were deployed as virtual machines in a controlled lab environment.
 
-### Kali Linux
+#### Kali Linux
 
 Configured as the attacker host with tools required for offensive simulation, including:
 - Nmap
 - Hydra
 - SSH client
 
-### Ubuntu Server
+#### Ubuntu Server
 
 Configured as the monitored target host with:
 - OpenSSH service enabled
@@ -75,7 +75,7 @@ Configured as the monitored target host with:
 - sudo functionality available for privilege escalation testing
 - Filebeat installed for log forwarding
 
-## Network Configuration
+### Network Configuration
 
 The lab required network connectivity between the attacker and the target system so that the Kali machine could reach the Ubuntu server over SSH.
 
@@ -101,7 +101,7 @@ This file was selected because it records:
 - ```sudo``` privilege escalation events
 - account and session activity
 
-## Filebeat Configuration
+### Filebeat Configuration
 
 Filebeat was installed on the Ubuntu target and configured to collect Linux authentication events.
 
@@ -125,7 +125,7 @@ Kibana / Elastic Security
 SOC Analyst Investigation
 ```
 
-## Elasticsearch and Kibana Configuration
+### Elasticsearch and Kibana Configuration
 
 Elasticsearch was used as the central log storage and indexing engine.
 
@@ -136,7 +136,7 @@ Kibana was used to:
 - investigate suspicious activity
 - review alerts generated from detection logic
 
-## SIEM Validation
+### SIEM Validation
 
 Before running the attack simulation, the following validation steps were performed:
 - Filebeat service running
@@ -145,7 +145,7 @@ Before running the attack simulation, the following validation steps were perfor
 - Authentication logs searchable in Discover
 - Elastic Security interface accessible for investigation
 
-## Lab Validation
+### Lab Validation
 
 The environment was considered ready once:
 - Kali could reach the Ubuntu server over SSH
@@ -155,16 +155,16 @@ The environment was considered ready once:
 
 This preparation ensured that the full attack chain — from reconnaissance to incident response — could be observed and analyzed within the SOC workflow.
 
-## Environment Evidence
+### Environment Evidence
 ![Kali Linux](screenshots/01_Kali.png)
 ![Ubuntu](screenshots/01_Ubuntu.png)
 ![Elasticsearch_Kibana](screenshots/02_Elasticsearch_Kibana.png)
 ![Filebeat](screenshots/02_Filebeat.png)
-![Kibana Homepage](../screenshots/04_Kibana_Home_Page)
+![Kibana Homepage](../screenshots/04_Kibana_Home_Page.png)
 ![Kibana Data Views](../screenshots/04_Kibana_Data_Views.png)
 ---------------------------------------------------------------------
 
-🏗 LAB ARCHITECTURE
+## 🏗 LAB ARCHITECTURE
 
 The environment consists of three primary systems.
 
@@ -176,7 +176,7 @@ The environment consists of three primary systems.
 
 --------------------------------------------------------------------
 
-🗺️ ARCHITECTURE DIAGRAM
+## 🗺️ ARCHITECTURE DIAGRAM
 
 The attack telemetry flows through the Elastic monitoring pipeline.
 
@@ -252,7 +252,7 @@ The attacker targets the SSH service exposed on the Ubuntu server.
 
 -----------------------------------------------------------------
 
-📂 LOG SOURCES MONITORED
+## 📂 LOG SOURCES MONITORED
 ```
 /var/log/auth.log
         │
@@ -270,7 +270,7 @@ Credential access attempts
 ```
 -----------------------------------------------------------------
 
-🚨 ATTACK EXECUTION
+## 🚨 ATTACK EXECUTION
 
 🔎 1. Reconnaissance
 
@@ -429,7 +429,7 @@ Persistent Access
 
 -------------------------------------------------------------------
 
-🛡 DETECTION ENGINEERING
+## 🛡 DETECTION ENGINEERING
 
 The SOC configured detections for multiple attack behaviours.
 
@@ -520,7 +520,7 @@ Credential Dump Attempt
 
 ------------------------------------------------------------------
 
-🕵️ SOC INVESTIGATION WORKFLOW
+## 🕵️ SOC INVESTIGATION WORKFLOW
 ```
 🚨 Alert Triggered
       │
@@ -544,7 +544,7 @@ Contain Attacker
 ```
 ----------------------------------------------------------------
 
-⏱ INCIDENT TIMELINE(EXCERPTS)
+## ⏱ INCIDENT TIMELINE(EXCERPTS)
 
 | Time | Event | Interpretation |
 |-----|------|------|
@@ -558,7 +558,7 @@ Contain Attacker
                                                                                     
 -----------------------------------------------------------------
 
-🚑 INCIDENT RESPONSE
+## 🚑 INCIDENT RESPONSE
 
 Terminate attacker session:
 ```
@@ -580,7 +580,7 @@ cat /etc/passwd | grep backdoor
 
 -----------------------------------------------------------------
 
-🔒 HARDENING MEASURES
+## 🔒 HARDENING MEASURES
 ```
 Security Controls
       │
@@ -603,7 +603,7 @@ Recommended improvements:
 
 ------------------------------------------------------------------
 
-🎯 MITRE ATT&CK Mapping
+## 🎯 MITRE ATT&CK MAPPING
 
 | Tactic | Technique |
 |------|------|
@@ -617,7 +617,7 @@ Recommended improvements:
 
 -------------------------------------------------------------------
 
-🧠 Skills Demonstrated
+## 🧠 SKILLS DEMONSTRATED
 
 This project demonstrates practical SOC analyst skills including:
 - SIEM engineering
@@ -638,7 +638,7 @@ Skills gained:
 
 ------------------------------------------------------------------
 
-📚 LESSONS LEARNED
+## 📚 LESSONS LEARNED
 
 Key insights from the lab:
 
@@ -649,7 +649,7 @@ Key insights from the lab:
 
 -----------------------------------------------------------------
 
-🏁 CONCLUSION
+## 🏁 CONCLUSION
 
 This project demonstrates a complete SOC detection and response workflow 
 using Elastic SIEM.
