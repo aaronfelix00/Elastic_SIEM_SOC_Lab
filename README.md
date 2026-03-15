@@ -86,11 +86,11 @@ The attack telemetry flows through the Elastic monitoring pipeline.
 
 ------------------------------------------------------------------
 
-## ⚔️ TTACK SCENARIO
+## ⚔ A️ TTACK SCENARIO
 
 The attacker targets the SSH service exposed on the Ubuntu server.
 
-```mermaid
+mermaid
 flowchart TD
 
 A[🔎 Reconnaissance] --> B[📄 System Logs /var/log/auth.log]
@@ -103,7 +103,7 @@ G --> H[🔁 Backdoor Login (Re-entry)]
 H --> I[🚨 SOC Detection]
 I --> J[🕵️ Incident Investigation]
 J --> K[🛠️ Incident Response (Remediation)]
-```
+
 ------------------------------------------------------------------
 
 🧰 TOOLS DEPLOYED
