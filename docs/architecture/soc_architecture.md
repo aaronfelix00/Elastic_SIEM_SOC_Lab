@@ -1,4 +1,3 @@
-```
 # SOC Lab Architecture
 
 This document describes the architecture of the Elastic-based SOC lab.
@@ -14,6 +13,5 @@ This document describes the architecture of the Elastic-based SOC lab.
 ## Architecture Flow
 
 ```
-Kali → Ubuntu → Filebeat → Elasticsearch → Kibana / Elastic Security → SOC Anture
-```
+Kali → Ubuntu → Filebeat → Elasticsearch → Kibana / Elastic Security → Salysisnture
 ```

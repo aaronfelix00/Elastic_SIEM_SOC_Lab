@@ -16,6 +16,6 @@ This document summarizes the full simulated intrusion workflow.
 ## Attack Flow
 
 ```
-Recon → Brute Force → Initial Access → Privilege Escalation → Credential Access → Persistence → Re-entry → Response
+Reconnaissance → Brute Force → Initial Access → Privilege Escalation → Credential Access → Persistence → Re-entry → Response
 ```
 
