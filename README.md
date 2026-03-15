@@ -12,23 +12,23 @@ The Security Operations Center (SOC) then detects, investigates, and responds to
 
 Simulated Attack Stages:
 
-🔎 Reconnaissance
+- 🔎 Reconnaissance
 
-🔑 SSH brute force attack
+- 🔑 SSH brute force attack
 
-🔓 Unauthorized login
+- 🔓 Unauthorized login
 
-⚡ Privilege escalation
+- ⚡ Privilege escalation
 
-🗝 Credential dumping
+- 🗝 Credential dumping
 
-🧬 Persistence via backdoor account
+- 🧬 Persistence via backdoor account
 
-🔁 Backdoor re-entry
+- 🔁 Backdoor re-entry
 
-🕵 SOC investigation
+- 🕵 SOC investigation
 
-🚨 Incident response
+- 🚨 Incident response
 
 ----------------------------------------------------------------------
 
@@ -48,11 +48,11 @@ The main goals of this SOC lab are:
 
 The environment consists of three primary systems.
 
-Component                       Role
-
-🐉 Kali Linux                    Attacker machine
-🐧 Ubuntu Server            Target host
-📊 Elastic Stack               SIEM platform
+| Component | Role |
+|-----------|------|
+| 🐉 Kali Linux | Attacker machine |
+| 🐧 Ubuntu Server | Target host |
+| 📊 Elastic Stack | SIEM platform |
 
 ![Kali Linux](screenshots/01_Kali.png)
 ![Ubuntu](screenshots/01_Ubuntu.png)
@@ -86,7 +86,7 @@ The attack telemetry flows through the Elastic monitoring pipeline.
 
 ------------------------------------------------------------------
 
-## ⚔ A️ TTACK SCENARIO
+## ⚔ ️ TTACK SCENARIO
 
 The attacker targets the SSH service exposed on the Ubuntu server.
 
@@ -125,20 +125,22 @@ The attacker targets the SSH service exposed on the Ubuntu server.
 
 🧰 TOOLS DEPLOYED
 
-Tool                                Purpose
+## 🧰 TOOLS DEPLOYED
 
-🐉 Kali Linux                 Attack platform
-💣 Hydra                       SSH brute force
-🔐 SSH                         Remote login
-📦 Filebeat                    Log collection
-🔎 Elasticsearch            Log storage
-📊 Kibana                      Visualization
-🛡 Elastic Security         Threat Detection
+| Tool | Purpose |
+|-----|------|
+| 🐉 Kali Linux | Attack platform |
+| 🧨 Hydra | SSH brute force |
+| 🔐 SSH | Remote login |
+| 📦 Filebeat | Log collection |
+| 🔎 Elasticsearch | Log storage |
+| 📊 Kibana | Visualization |
+| 🛡️ Elastic Security | Threat detection |
 
 -----------------------------------------------------------------
 
 📂 LOG SOURCES MONITORED
-
+```
 /var/log/auth.log
         │
         ▼
@@ -152,7 +154,7 @@ User account changes
         │
         ▼
 Credential access attempts
-
+```
 -----------------------------------------------------------------
 
 🚨 ATTACK EXECUTION
@@ -165,7 +167,7 @@ The attacker begins by scanning the target system.
 nmap -sV "Target IP"
 ```
 Workflow
-
+```
 🐉 Kali Attacker
       │
       ▼
@@ -173,7 +175,7 @@ Workflow
       │
       ▼
 SSH Service Detected
-
+```
 ![Recon](screenshots/05_Attacker_Recon_nmap_scan.png)
 
 🔑 2. SSH Brute Force
@@ -183,7 +185,7 @@ The attacker attempts to guess passwords.
 hydra -L users.txt -P passwords.txt ssh://"Target IP"
 ```
 Workflow
-
+```
 💣 Hydra Attack
       │
       ▼
@@ -194,7 +196,7 @@ Multiple Failed Logins
       │
       ▼
 🚨 SIEM Detection
-
+```
 ![Hydra Execution](screenshots/06_ssh_bruteforce_attack_execution_with_hydra.png)
 ![Failed SSH Attempts](screenshots/07_multiple_failed_ssh_authentication_attempts.png)
 
@@ -205,7 +207,7 @@ Eventually a password is discovered.
 ssh "username"@"Target IP"
 ```
 Workflow
-
+```
 Failed Logins
       │
       ▼
@@ -216,7 +218,7 @@ Successful Authentication
       │
       ▼
 Unauthorized Access
-
+```
 ![Succesful Login](screenshots/08_successful_ssh_authentication_event.png)
 
 ⚡ 4. Privilege Escalation
@@ -226,7 +228,7 @@ The attacker escalates privileges.
 sudo -i
 ```
 Workflow
-
+```
   User Shell
       │
       ▼
@@ -234,6 +236,7 @@ Workflow
       │
       ▼
 👑 Root Access
+```
 
 Indicator in logs:
 ```
@@ -247,11 +250,12 @@ This indicates the attacker now has full administrative control.
 🗝️ 5. Credential Dumping
 
 The attacker accesses the password hash database.
-
+```
 cat /etc/shadow
+```
 
 Workflow
-
+```
 👑 Root Access
       │
       ▼
@@ -259,6 +263,7 @@ Sensitive File Access
       │
       ▼
 Password Hash Extraction
+```
 
 MITRE ATTACK
 ```
@@ -274,8 +279,9 @@ The attacker creates a backdoor user.
 useradd backdoor
 passwd backdoor
 ```
-Workflow
 
+Workflow
+```
 Root Access
       │
       ▼
@@ -286,7 +292,7 @@ Backdoor Account
       │
       ▼
 Persistent Access
-
+```
 ![Backdoor Creation](screenshots/14_backdoor_account_creation_command.png)
 
 
@@ -296,8 +302,9 @@ The attacker reconnects later.
 ```
 ssh backdoor@"Target IP"
 ```
-Workflow
 
+Workflow
+```
 Backdoor Credentials
       │
       ▼
@@ -305,7 +312,7 @@ SSH Authentication
       │
       ▼
 Persistent Access
-
+```
 ![Backdoor Persistence](screenshots/16_backdoor_ssh_login_persistence_access.png)
 
 -------------------------------------------------------------------
@@ -324,8 +331,9 @@ Indicator:
 ```
 event.outcome: "failure"
 ```
-Vector:
 
+Vector:
+```
 Multiple Failures
       │
       ▼
@@ -333,7 +341,7 @@ Threshold Triggered
       │
       ▼
 🚨 Alert Generated
-
+```
 
 🔓 B. Successful Login Detection
 
@@ -341,13 +349,14 @@ Indicator:
 ```
 event.outcome: "success"
 ```
-Vector:
 
+Vector:
+```
 Successful Login
       │
       ▼
 User Activity Investigation
-
+```
 
 ⚡ C. Privilege Escalation Detection
 
@@ -355,8 +364,9 @@ Indicator:
 ```
 sudo usage
 ```
-Vector:
 
+Vector:
+```
 User Command
       │
       ▼
@@ -364,7 +374,7 @@ User Command
       │
       ▼
 Root Privileges
-
+```
 
 🧬 D. Suspicious User Creation
 
@@ -372,13 +382,14 @@ Indicator:
 ```
 useradd
 ```
-Vector:
 
+Vector:
+```
 New User Created
       │
       ▼
 Potential Persistence
-
+```
 
 🗝  E. Credential Access Detection
 
@@ -386,19 +397,20 @@ Indicator:
 ```
 /etc/shadow
 ```
-Vector:
 
+Vector:
+```
 Sensitive File
       │
       ▼
 Credential Dump Attempt
-
+```
 ![Timeline Analysis](screenshots/20_SIEM_attack_timeline_analysis.png)
 
 ------------------------------------------------------------------
 
 🕵️ SOC INVESTIGATION WORKFLOW
-
+```
 🚨 Alert Triggered
       │
       ▼
@@ -418,19 +430,19 @@ Identify Persistence
       │
       ▼
 Contain Attacker
-
+```
 ----------------------------------------------------------------
 
 ⏱ INCIDENT TIMELINE(EXCERPTS)
 
-Time              Event                                     Interpretation                                               
-
-20:35             SSH authentication failures               Brute-force attempts begins
-20:48             sudo escalation                           Privilege escalation                                                                                                          
-21:03             backdoor account                          Persistence established                                                                                  
-21:07             login attempts with backdoor              Persistence tested    
-21:08             Systemd session confirmed                 Backdoor access confirmed    
-
+| Time | Event | Interpretation |
+|-----|------|------|
+| 20:35 | SSH authentication failures | Brute-force attempts begin |
+| 20:46 | sudo escalation | Privilege escalation |
+| 21:03 | backdoor account | Persistence established |
+| 21:07 | login attempts with backdoor | Persistence tested |
+| 21:08 | systemd session confirmed | Backdoor access confirmed |
+                                                                                                                                               
 ![Timeline Analysis](screenshots/20_SIEM_attack_timeline_analysis.png)
                                                                                     
 -----------------------------------------------------------------
@@ -458,7 +470,7 @@ cat /etc/passwd | grep backdoor
 -----------------------------------------------------------------
 
 🔒 HARDENING MEASURES
-
+```
 Security Controls
       │
       ├── 🔐 SSH Hardening
@@ -466,7 +478,7 @@ Security Controls
       ├── 🧱 Firewall
       ├── 🔑 Password Policy
       └── 📊 Continuous Monitoring
-
+```
 Recommended improvements:
 - Disable password SSH authentication
 - Enable SSH key authentication
@@ -482,15 +494,15 @@ Recommended improvements:
 
 🎯 MITRE ATT&CK Mapping
 
-Tactic                           Technique
-
-Discovery                    Network Service Discovery
-Credential Access       Brute Force
-Initial Access               Valid Accounts
-Privilege Escalation    sudo abuse
-Credential Access       Credential Dumping
-Persistence                 Create Account
-Persistence                 Account Manipulation
+| Tactic | Technique |
+|------|------|
+| Discovery | Network Service Discovery |
+| Credential Access | Brute Force |
+| Initial Access | Valid Accounts |
+| Privilege Escalation | sudo abuse |
+| Credential Access | Credential Dumping |
+| Persistence | Create Account |
+| Persistence | Account Manipulation |
 
 -------------------------------------------------------------------
 
