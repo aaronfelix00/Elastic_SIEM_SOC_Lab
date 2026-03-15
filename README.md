@@ -160,8 +160,8 @@ This preparation ensured that the full attack chain — from reconnaissance to i
 ![Ubuntu](screenshots/01_Ubuntu.png)
 ![Elasticsearch_Kibana](screenshots/02_Elasticsearch_Kibana.png)
 ![Filebeat](screenshots/02_Filebeat.png)
-![Kibana Homepage](../screenshots/04_Kibana_Home_Page.png)
-![Kibana Data Views](../screenshots/04_Kibana_Data_Views.png)
+![Kibana Homepage](screenshots/04_Kibana_Home_Page.png)
+![Kibana Data Views](screenshots/04_Kibana_Data_Views.png)
 ---------------------------------------------------------------------
 
 ## 🏗 LAB ARCHITECTURE
