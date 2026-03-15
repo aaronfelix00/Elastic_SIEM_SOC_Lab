@@ -86,7 +86,7 @@ The attack telemetry flows through the Elastic monitoring pipeline.
 
 ------------------------------------------------------------------
 
-## ⚔ A️ TTACK SCENARIO
+## ⚔ ️ TTACK SCENARIO
 
 The attacker targets the SSH service exposed on the Ubuntu server.
 
@@ -116,6 +116,30 @@ H --> I
 I --> J
 J --> K
 
+```
+
+```
+🔎 Reconnaissance
+      │
+      │ System logs (/var/log/auth.log)
+      ▼
+🔑 SSH Brute Force
+      ▼
+🔓 Successful Login
+      ▼
+⚡ Privilege Escalation
+      ▼
+🗝️ Credential Dumping
+      ▼
+🧬 Persistence Creation
+      ▼
+🔁 Backdoor Login (Re-entry)
+      ▼
+🚨 SOC Detection
+      ▼
+🕵️ Incident Investigation
+      ▼
+🛠️ Incident Response (Remediation)
 ```
 
 ------------------------------------------------------------------
