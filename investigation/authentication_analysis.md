@@ -13,7 +13,7 @@ These logs are collected by Filebeat and ingested into Elastic SIEM.
 The analyst observes repeated login failures.
 
 ## Evidence
-![Authentication Failure Logs]{../screenshots/07_multiple_failed_ssh_authentication_attempts.png)
+![Authentication Failure Logs](../screenshots/07_multiple_failed_ssh_authentication_attempts.png)
 ![Authention Failures in SIEM](../screenshots/07b_multiple_failed_login_events_in_kibana_discover.png)
 
 These events indicate that an attacker is attempting to guess credentials.
