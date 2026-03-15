@@ -2,7 +2,7 @@
 
 Once root access is obtained, the attacker attempts to extract password hashes from the Linux system.
 
-Linux stores hashed user passwords inside the /etc/shadow file, which is only accessible to privileged users.
+Linux stores hashed user passwords inside the ```/etc/shadow``` file, which is only accessible to privileged users.
 
 ## Command
 ```
@@ -16,7 +16,7 @@ These hashes can potentially be cracked offline to reveal plaintext passwords.
 
 ## Security Impact
 
-Accessing /etc/shadow allows attackers to:
+Accessing ```/etc/shadow``` allows attackers to:
 
 - steal password hashes
 - perform offline password cracking
@@ -29,6 +29,6 @@ Credential dumping is a strong indicator of compromise and should trigger invest
 
 Relevant indicators include:
 
-- access to /etc/shadow
+- access to ```/etc/shadow```
 - root-level commands executed after login
 
