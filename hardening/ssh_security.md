@@ -1,4 +1,3 @@
-```
 # SSH Security Hardening
 
 One of the main weaknesses exploited in this attack was password-based SSH authentication.
@@ -31,4 +30,4 @@ PermitRootLogin no
 ```
 
 These changes significantly reduce the risk of brute-force attacks.
-```
+

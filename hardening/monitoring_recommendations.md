@@ -1,4 +1,3 @@
-```
 # Monitoring Improvements
 
 Continuous monitoring is essential for detecting suspicious activity.
@@ -11,5 +10,5 @@ Recommended improvements include:
 - alerts for new user creation
 - alerts for privilege escalation
 
-Elastic SIEM enables SOC analysts to detect and investigate these behaviors quickly.
-```
+Elastic SIEM enables SOC analysts to detect and investigate these behaviours quickly.
+

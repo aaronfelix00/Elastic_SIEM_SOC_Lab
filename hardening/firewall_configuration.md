@@ -1,4 +1,3 @@
-```
 # Firewall Configuration
 
 A firewall can reduce exposure by limiting access to critical services.
@@ -21,4 +20,4 @@ sudo ufw status
 ```
 
 Restricting access reduces the attack surface of the system.
-```
+

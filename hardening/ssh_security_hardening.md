@@ -1,4 +1,3 @@
-```
 # SSH Security Hardening
 
 Recommended hardening actions:
@@ -8,4 +7,4 @@ Recommended hardening actions:
 - Disable direct root login
 - Restrict access with firewall rules
 - Monitor auth logs continuously
-```
+
