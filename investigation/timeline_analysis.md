@@ -37,8 +37,6 @@ SIEM Detection:
 Successful SSH Login Rule Triggered
 ```
 
-![SSH detection alert](../screenshots/18_ssh_bruteforce_detection_alert_in_kibana.png)
-
 Impact:
 
 - Unauthorized access to the server
@@ -52,6 +50,11 @@ Observed event:
 ```
 sudo command execution
 ```
+SIEM Detection:
+```
+Sudo Privilege Escalation Rule Triggered
+```
+![SSH detection alert](../screenshots/18_ssh_bruteforce_detection_alert_in_kibana.png)
 
 ### 5. Credential Dumping
 
