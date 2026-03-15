@@ -6,7 +6,7 @@ This marks the moment when the attacker gains initial access to the target syste
 
 ## Command
 ```
-ssh "username"@"Target IP"
+ssh ragnar@10.0.0.99
 ```
 The attacker enters the correct password obtained during the brute-force process.
 
