@@ -13,5 +13,5 @@ This document describes the architecture of the Elastic-based SOC lab.
 ## Architecture Flow
 
 ```
-Kali → Ubuntu → Filebeat → Elasticsearch → Kibana / Elastic Security → Salysisnture
+Kali → Ubuntu → Filebeat → Elasticsearch → Kibana/Elastic Security → SOC analyst
 ```
